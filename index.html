@@ -272,34 +272,6 @@
 	buttons at the top and a button to enable full screen editing <i class="fa fa-arrows-alt" aria-hidden="true"></i>.
 	</p>
 
-<pre class="options">
-	var opts = {
-		'targetDiv': 'pedigree',
-		'btn_target': 'pedigree_history',
-		'width': 450,
-		'height': 320,
-		'symbol_size': 35,
-		'store_type': 'array',
-		'diseases': [
-			{'type': 'breast_cancer', 'colour': '#F68F35'},
-			{'type': 'ovarian_cancer', 'colour': '#4DAA4D'},
-			{'type': 'pancreatic_cancer', 'colour': '#4289BA'},
-			{'type': 'prostate_cancer', 'colour': '#D5494A'}],
-		labels: ['age', 'yob'],
-		font_size: '.75em',
-		font_family: 'Helvetica',
-		font_weight: 700,
-		'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
-	};
-	var local_dataset = pedcache.current(opts);
-	if (local_dataset !== undefined && local_dataset !== null) {
-		opts.dataset = local_dataset;
-	} else {
-		opts.dataset = dataset;
-	}
-	opts= ptree.build(opts);
-</pre>
-
 	<h2>Options</h2>
 	<div class="row" id="targetDiv">
 		<div class="left">targetDiv</div>
