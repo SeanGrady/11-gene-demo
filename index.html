@@ -236,16 +236,7 @@
 			The 11-gene classifier is an artificial intelligence project that determines your risk of carrying a breast cancer susceptibility mutation based on an analysis of your family history of cancer. <strong>This classifier is a research tool and is not ready for clinical use.</strong>
 			</p>
 			<p>
-			It uses the JavaScript <a href="https://d3js.org/" target="_blank">d3</a> library
-			to layout the hierarchical structure and draw the individual nodes as a SVG image.
-			The size of the SVG can be configured as well as the colour codes used to denote disease.
-			It can be used to build the pedigree structure or load in an existing data set.
-			To assist visualisation and building of larger pedigrees a full screen mode is provided.
-			</p>
-			<p>
-			Browser local storage is used to maintain a history of the steps in building a pedigree
-			structure. So that at each step of the pedigree building process it can be undone to return
-			to previous versions.
+			The classifier is implemented as an AdaNet machine learning network. Training of the network was performed with 220,000 pedigree examples, 10% of which were positive for a pathogenic mutation one of the genes listed below:			
 			</p>
 			<ul>
 				<li>BRCA1</li>
@@ -259,8 +250,19 @@
 				<li>PTEN</li>
 				<li>STK11</li>
 				<li>TP53</li>
-
 			</ul>
+			<p>
+			It uses the JavaScript <a href="https://d3js.org/" target="_blank">d3</a> library
+			to layout the hierarchical structure and draw the individual nodes as a SVG image.
+			The size of the SVG can be configured as well as the colour codes used to denote disease.
+			It can be used to build the pedigree structure or load in an existing data set.
+			To assist visualisation and building of larger pedigrees a full screen mode is provided.
+			</p>
+			<p>
+			Browser local storage is used to maintain a history of the steps in building a pedigree
+			structure. So that at each step of the pedigree building process it can be undone to return
+			to previous versions.
+			</p>
 		</div>
 	</div>
 
