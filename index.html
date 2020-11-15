@@ -248,9 +248,6 @@ e<!DOCTYPE html>
 			</ul>
 			<p> Click <strong><a href="docs/example3.html">here</a></strong> to access the classifier</p>
 			<p>
-			<a href="https://d3js.org/" target="_blank">d3</a> library
-			</p>
-			<p>
 			Browser local storage is used to maintain a history of the steps in building a pedigree
 			structure. So that at each step of the pedigree building process it can be undone to return
 			to previous versions.
@@ -293,79 +290,12 @@ e<!DOCTYPE html>
 	buttons at the top and a button to enable full screen editing <i class="fa fa-arrows-alt" aria-hidden="true"></i>.
 	</p>
 
-	<h2>Loading and Saving Pedigree Data</h2>
-	<p>The pedigree can be saved out and loaded back in. Preliminary support is given to loading basic
-	BOADICEA file format v4 (see the BOADICEA documentation
-	<a href="https://pluto.srl.cam.ac.uk/bd4/v4/docs/BWA_v4_Appendix_A.pdf" target="_blank">Appendix</a>).</p>
+	<h3>References</h3>
+	<p>PedigreeJS: A web-based graphical pedigree editor<br>
+	Carver T, Cunningham AP, Babb de Villiers C, Lee A, Hartley S, Tischkowitz M, et al.
+	<i>Bioinformatics <a href="http://dx.doi.org/10.1093/bioinformatics/btx705" target="_blank"> doi:10.1093/bioinformatics/btx705</a></i></p>
+	<p>JavaScript Libraries<a href="https://d3js.org/" target="_blank">d3</a></p>
 
-	<p>Support for <a href="https://www.cog-genomics.org/plink/1.9/formats#ped">PED file format</a>
-	has been added, see <a href="docs/example4.html">example 4</a>.<p>
-
-
-    <div class="row" id="store_type">
-		<div class="left">store_type</div>
-		<div>Pedigree storage (for undo, redo functions) set to 'session', 'local' or 'array'.
-		Default is '<a href="https://www.w3schools.com/html/html5_webstorage.asp">session</a>' browser storage.
-		Using 'session' will store the data for one session (data is lost when the browser tab is closed).
-		Using 'local' will store the data with no expiration date.
-		If session/local storage is not supported then it switches automatically to 'array' (JavaScript array store).</div>
-    </div>
-	<div class="row" id="zoomIn">
-		<div class="left">zoomIn</div>
-		<div>The factor by which the svg size can be scaled down to, default 1 (no zoom in).</div>
-    </div>
-	<div class="row" id="zoomOut">
-		<div class="left">zoomOut</div>
-		<div>The factor by which the svg size can be scaled up to, default 1 (no zoom out).</div>
-    </div>
-	<div class="row" id="edit">
-		<div class="left">edit</div>
-		<div>Set to true for a button to display an individual's details (<i>e.g.</i> age, sex) in a dialog or provide a funtion to handle editing.</div>
-    </div>
-	<div class="row" id="diseases">
-		<div class="left">diseases</div>
-		<div>Diseases and their colour representation, <i>e.g.</i>
-<pre class="options">
-[{'type': 'breast_cancer', 'colour': '#F68F35'},
- {'type': 'breast_cancer2', 'colour': 'pink'},
- {'type': 'ovarian_cancer', 'colour': '#4DAA4D'},
- {'type': 'pancreatic_cancer', 'colour': '#4289BA'},
- {'type': 'prostate_cancer', 'colour': '#D5494A'}]</pre>
-		</div>
-	</div>
-	<div class="row" id="background">
-		<div class="left">background</div>
-		<div>SVG background colour, <i>e.g.</i> #d3d3d3.</div>
-	</div>
-	<div class="row" id="node_background">
-		<div class="left">node_background</div>
-		<div>Individual's background colour, <i>e.g.</i> #fff.</div>
-	</div>
-	<div class="row" id="validate">
-		<div class="left">validate</div>
-		<div>Pedigree data validation (default true). This can also take a validation
-		function to override the in-built validation. The in-built validation throws an error if any
-		of the following are not true:
-		<ul>
-			<li>parents, when defined, exist in the pedigree</li>
-			<li>mother is female</li>
-			<li>father is male</li>
-		</ul>
-		A warning message it sent to the console if there are any individuals that are not connected
-		(i.e. a break in the pedigree). See the <a href="docs/developer.html">developer notes</a> for
-		more details.
-		</div>
-    </div>
-	<div class="row" id="DEBUG">
-		<div class="left">DEBUG</div>
-		<div>Debug mode, <i>e.g.</i> false.</div>
-    </div>
-
-    <h3>References</h3>
-    <p>PedigreeJS: A web-based graphical pedigree editor<br>
-    Carver T, Cunningham AP, Babb de Villiers C, Lee A, Hartley S, Tischkowitz M, et al.
-    <i>Bioinformatics <a href="http://dx.doi.org/10.1093/bioinformatics/btx705" target="_blank">
-    doi:10.1093/bioinformatics/btx705</a></i></p>
 </div>
 
 <p></p>
