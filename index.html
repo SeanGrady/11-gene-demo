@@ -186,6 +186,7 @@
 							 {'type': 'prostate_cancer', 'colour': '#D5494A'}],
 				'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)};
 		var local_dataset = pedcache.current(opts);
+		console.log(local_dataset);
 		if (local_dataset !== undefined && local_dataset !== null) {
 			opts.dataset = local_dataset;
 		} else {
@@ -194,7 +195,6 @@
 		opts= ptree.build(opts);
 		
 	});
-	console.log(pedcache.current(opts));
 
 	</script>
 </head>
