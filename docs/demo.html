@@ -201,6 +201,16 @@
 		});
 	});
 	</script>
+	
+	<script>
+	function myFunction() {
+	  var x = document.createElement("BUTTON");
+	  var t = document.createTextNode("Click me");
+	  x.appendChild(t);
+	  document.body.appendChild(x);
+	}
+	</script>
+	
 </head>
 <body>
 
@@ -233,16 +243,8 @@
 	<div id="reset_dialog" title="Confirmation Disease Reset"></div>
 	
 	<p>Test Button</p>
-	<button onclick="myFunction()">Try it</button>
+	<button onclick="myFunction()">Calculate</button>
 
-	<script>
-	function myFunction() {
-	  var x = document.createElement("BUTTON");
-	  var t = document.createTextNode("Click me");
-	  x.appendChild(t);
-	  document.body.appendChild(x);
-	}
-	</script>
 	
 </div>
 
