@@ -232,8 +232,18 @@
 	<div id="fh_settings"></div>
 	<div id="reset_dialog" title="Confirmation Disease Reset"></div>
 	
-	<p>Test Position</p>
-	<button onclick="myFunction()">Calculate</button>
+	<p>Test Button</p>
+	<button onclick="myFunction()">Try it</button>
+
+	<script>
+	function myFunction() {
+	  var x = document.createElement("BUTTON");
+	  var t = document.createTextNode("Click me");
+	  x.appendChild(t);
+	  document.body.appendChild(x);
+	}
+	</script>
+	
 </div>
 
 </body>
