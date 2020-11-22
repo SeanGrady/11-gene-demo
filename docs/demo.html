@@ -42,7 +42,7 @@
 			'height': 500,
 			'symbol_size': 35,
 			'edit': true,
-        	'diseases': $.extend(true, [], DEFAULT_DISEASES),
+        		'diseases': $.extend(true, [], DEFAULT_DISEASES),
 			'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
 		};
 		$('#opts').append(JSON.stringify(opts, null, 4));
@@ -199,15 +199,16 @@
 				update_diseases();
 			});			
 		});
-		
-		function calcMut() {
-		var local_dataset = pedcache.current(opts);
-		console.log(DEFAULT_DISEASES);
-		}
-
 	});
+
 	</script>
 	
+	<script>			
+		function calcMut() {
+		var local_dataset = pedcache.current(opts);
+		console.log(local_dataset);
+		};
+	</script>
 
 	
 </head>
