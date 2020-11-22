@@ -47,6 +47,7 @@
 		};
 		$('#opts').append(JSON.stringify(opts, null, 4));
 		var local_dataset = pedcache.current(opts);
+		console.log(local_dataset);
 		if (local_dataset !== undefined && local_dataset !== null) {
 			opts.dataset = local_dataset;
 		}
