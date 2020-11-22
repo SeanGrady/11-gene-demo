@@ -197,13 +197,14 @@
 				opts.diseases = new_diseases;
 				localStorage.setItem('diseases', JSON.stringify(opts.diseases));
 				update_diseases();
-			});
-				
-			function calcMut() {
-			var local_dataset = pedcache.current(opts);
-			console.log(DEFAULT_DISEASES);
-			}
+			});			
 		});
+		
+		function calcMut() {
+		var local_dataset = pedcache.current(opts);
+		console.log(DEFAULT_DISEASES);
+		}
+
 	});
 	</script>
 	
