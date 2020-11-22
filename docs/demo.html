@@ -206,19 +206,18 @@
 	</script>
 	
 	<script>
-		var opts = {
-		'targetDiv': 'pedigrees',
-		'btn_target': 'demo_history',
-		'store_type': 'session',
-		'width': svg_width,
-		'height': 500,
-		'symbol_size': 35,
-		'edit': true,
-        	'diseases': $.extend(true, [], DEFAULT_DISEASES),
-		'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
-		};
-
 		function calcMut() {
+		var opts = {
+			'targetDiv': 'pedigrees',
+			'btn_target': 'demo_history',
+			'store_type': 'session',
+			'width': svg_width,
+			'height': 500,
+			'symbol_size': 35,
+			'edit': true,
+	 	       	'diseases': $.extend(true, [], DEFAULT_DISEASES),
+			'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
+		};
 		var display_dataset = pedcache.current(opts);
 		console.log(display_dataset);
 		};
