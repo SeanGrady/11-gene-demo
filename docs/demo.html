@@ -199,14 +199,17 @@
 				update_diseases();
 			});			
 		});
+		<p>Dataset</p>;
+		var display_dataset = pedcache.current(opts);
+		console.log(display_dataset);
 	});
 
 	</script>
 	
 	<script>			
 		function calcMut() {
-		var local_dataset = pedcache.current(opts);
-		console.log(local_dataset);
+		var display_dataset = pedcache.current(opts);
+		console.log(display_dataset);
 		};
 	</script>
 
