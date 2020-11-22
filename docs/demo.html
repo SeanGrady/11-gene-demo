@@ -204,10 +204,8 @@
 	
 	<script>
 	function calcMut() {
-	  var x = document.createElement("BUTTON");
-	  var t = document.createTextNode("Click me");
-	  x.appendChild(t);
-	  document.body.appendChild(x);
+		var displayPed = pedcache.current(opts);
+		console.log(displayPed);
 	}
 	</script>
 	
