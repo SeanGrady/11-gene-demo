@@ -526,7 +526,7 @@
         	targetDiv: 'pedigree_edit',
         	dataset: [ {"name": "m21", "display_name": "father", "sex": "M", "top_level": true},
         		       {"name": "f21", "display_name": "mother", "sex": "F", "top_level": true},
-        			   {"name": "ch1", "display_name": "me", "sex": "F", "mother": "f21", "father": "m21", "proband": true}],
+        			   {"name": "1", "display_name": "me", "sex": "F", "mother": "f21", "father": "m21", "proband": true}],
         	width: 600,
         	height: 400,
         	symbol_size: 35,
