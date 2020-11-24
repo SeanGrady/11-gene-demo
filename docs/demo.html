@@ -219,9 +219,8 @@
 			var display_dataset = pedcache.current(opts);
 			console.log(display_dataset);
 
-			var myObj, x;
-			myObj = {"name":"John", "age":30, "car":null};
-			for (x in myObj) {
+			var x;
+			for (x in display_dataset) {
 			  console.log(x);
 			};
 		};
