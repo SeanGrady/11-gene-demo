@@ -205,19 +205,25 @@
 	
 	<script>
 		function calcMut() {
-		var opts = {
-			'targetDiv': 'pedigrees',
-			'btn_target': 'demo_history',
-			'store_type': 'session',
-			'width': '839.3333333333334',
-			'height': 500,
-			'symbol_size': 35,
-			'edit': true,
-	 	       	'diseases': $.extend(true, [], DEFAULT_DISEASES),
-			'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
-		};
-		var display_dataset = pedcache.current(opts);
-		console.log(display_dataset);
+			var opts = {
+				'targetDiv': 'pedigrees',
+				'btn_target': 'demo_history',
+				'store_type': 'session',
+				'width': '839.3333333333334',
+				'height': 500,
+				'symbol_size': 35,
+				'edit': true,
+				'diseases': $.extend(true, [], DEFAULT_DISEASES),
+				'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
+			};
+			var display_dataset = pedcache.current(opts);
+			console.log(display_dataset);
+
+			var myObj, x;
+			myObj = {"name":"John", "age":30, "car":null};
+			for (x in myObj) {
+			  console.log(x);
+			};
 		};
 	</script>
 
