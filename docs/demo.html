@@ -220,14 +220,13 @@
 			var counter = 0;
 			var dataset = pedcache.current(opts);
 			console.log(dataset);
-			dataset.forEach(function(item){
-				console.log('Name: ' + item.name);
-				console.log('Top_Level: ' + item.top_level);
-				if (item.top_level = "true") {
-					counter = counter + 1;
-				};
-			});
-			console.log(counter);
+			
+			var x;
+			for (x in dataset) {
+				var person = dataset[x];
+				console.log(person.name);
+			};
+
 		};
 	</script>
 
