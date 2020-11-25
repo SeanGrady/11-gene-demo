@@ -226,7 +226,7 @@
 				person = dataset[i];
 				console.log(person.name);
 				console.log(person.top_level);
-				if (person.top_level == "true") {
+				if (Boolean(person.top_level) {
 					counter = counter + 1;
 				};
 			};
