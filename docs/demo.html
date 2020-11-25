@@ -219,7 +219,7 @@
 			
 			var dataset = pedcache.current(opts);
 			console.log(dataset);
-			arr.forEach(function(item){
+			dataset.forEach(function(item){
 				console.log('ID: ' + item.id);
 				console.log('MSG: ' + item.msg);
 				console.log('TID: ' + item.tid);
