@@ -219,10 +219,12 @@
 			
 			var dataset = pedcache.current(opts);
 			console.log(dataset);
-			for(var i = 0; i < dataset.length; i++) {
-  				var person = dataset[i];
- 				console.log(person.name);
-			};
+			arr.forEach(function(item){
+				console.log('ID: ' + item.id);
+				console.log('MSG: ' + item.msg);
+				console.log('TID: ' + item.tid);
+				console.log('FROMWHO: ' + item.fromWho);
+			});
 		};
 	</script>
 
