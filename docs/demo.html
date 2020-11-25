@@ -216,12 +216,12 @@
 				'diseases': $.extend(true, [], DEFAULT_DISEASES),
 				'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
 			};
-			var display_dataset = pedcache.current(opts);
-			console.log(display_dataset);
+			var dataset = pedcache.current(opts);
+			console.log(dataset);
 
 			var x;
-			for (x in display_dataset) {
-			  console.log(display_dataset[x]);
+			for (x in dataset) {
+			  console.log(dataset[x]);
 			};
 		};
 	</script>
