@@ -226,8 +226,11 @@
 				person = dataset[i];
 				console.log(person.name);
 				console.log(person.top_level);
-				var testitem = Boolean(person.top_level);
-				console.log(testitem);
+				var top = Boolean(person.top_level);
+				if (top) {
+					counter += 1
+				};
+				console.log(top);
 			};
 			console.log(counter);
 		};
