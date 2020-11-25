@@ -222,12 +222,14 @@
 			
 			var counter = 0;
 			var person
+			var proband_row
 			for(var i = 0; i < dataset.length; i += 1) {			
 				person = dataset[i];
 				console.log(person.name);
 				var proband = Boolean(person.proband);
 				if (proband) {
-					counter += 1
+					counter += 1;
+					proband_row = i;
 				};
 			};
 			console.log(counter);
