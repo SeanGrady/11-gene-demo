@@ -222,13 +222,11 @@
 			
 			var counter = 0;
 			var person
-			var item
 			for(var i = 0; i < dataset.length; i += 1) {			
 				person = dataset[i];
 				console.log(person.name);
-				item = person.sex
-				console.log(item);
-				if (item == 'M') {
+				console.log(person.top_level);
+				if (person.top_level == 'true') {
 					counter = counter + 1;
 				};
 			};
