@@ -222,9 +222,8 @@
 			console.log(dataset);
 			
 			var counter = 0;
-			var x;
-			for (x in dataset) {
-				var person = dataset[x];
+			for(var i = 0; i < dataset.length; i += 1)				
+				var person = dataset[i];
 				console.log(person.name);
 				if (person.top_level = "true") {
 					counter = counter + 1;
