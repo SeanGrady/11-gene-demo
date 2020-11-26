@@ -232,10 +232,14 @@
 					proband_row = i;
 				};
 			};
-			console.log(proband_row);
-			var probindex
-			probindex = pedigree_util.getProbandIndex(dataset)
-			console.log(probindex);
+			//console.log(proband_row);
+			//var probindex
+			//probindex = pedigree_util.getProbandIndex(dataset)
+			//console.log(probindex);
+			var siblings
+			siblings = pedigree_util.getSiblings(dataset, "f21");
+			console.log(siblings);
+			
 		};
 	</script>
 
