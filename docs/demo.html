@@ -245,6 +245,9 @@
 			//console.log(children);
 			
 			// Convert to AI model format
+			// JSON data structure 
+			var JSONPedigree
+			
 			// Individuals and Indexes
 			var proband
 			var father
@@ -282,10 +285,12 @@
 			// Children - up to 4
 			// Nieces and Nephews - up to 4
 
-			// Proband - 1		
+			// Proband - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
+			var element = dastaset[19].getElementByID("name");
 			console.log(proband);
+			console.log(element);
 			
 			// Parents
 
