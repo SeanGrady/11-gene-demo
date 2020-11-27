@@ -205,6 +205,8 @@
 	
 	<script>
 		function calcMut() {
+			
+			// Get the current pedigree dataset
 			var opts = {
 				'targetDiv': 'pedigrees',
 				'btn_target': 'demo_history',
@@ -245,6 +247,44 @@
 			//var children
 			//children = pedigree_util.getChildren(dataset,dataset[8],dataset[4]);
 			//console.log(children);
+			
+			// Convert to AI model format
+			// Individuals and Indexes
+			var proband
+			var father
+			var mother
+			var patGF
+			var patGM
+			var matGF
+			var matGM
+			var patAU
+			var matAU
+			var patCO1
+			var patCO2
+			var patCO3
+			var patCO4
+			var matCO1
+			var matCO2
+			var matCO3
+			var matCO4
+			var siblings
+			var children
+			var nieNeph1
+			var nieNeph2
+			var nieNeph3
+			var nieNeph4
+			
+			// Proband - 1
+			// Mother and Father - 2,3
+			// Grandparents - 4,5,6,7
+			// PaternalAU - up to 4
+			// MaternalAU - up to 4
+			// Paternal Cousins - up to 4
+			// Maternal Cousins - up to 4
+			// Siblings - up to 4
+			// Children - up to 4
+			// Nieces and Nephews - up to 4
+			
 		};
 	</script>
 
