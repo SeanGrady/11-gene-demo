@@ -524,9 +524,9 @@
 	ptree.build = function(options) {
         var opts = $.extend({ // defaults
         	targetDiv: 'pedigree_edit',
-        	dataset: [ {"name": "m21", "display_name": "father", "sex": "M", "top_level": true},
-        		       {"name": "f21", "display_name": "mother", "sex": "F", "top_level": true},
-        			   {"name": "1", "display_name": "me", "sex": "F", "mother": "f21", "father": "m21", "proband": true}],
+        	dataset: [ {"name": "m21", "sex": "M", "top_level": true},
+        		       {"name": "f21", "sex": "F", "top_level": true},
+        			   {"name": "1", "sex": "F", "mother": "f21", "father": "m21", "proband": true}],
         	width: 600,
         	height: 400,
         	symbol_size: 35,
