@@ -236,8 +236,6 @@
 			//};
 			//console.log(proband_row);
 			//var probindex
-			//probindex = pedigree_util.getProbandIndex(dataset)
-			//console.log(probindex);
 			//var siblings
 			//siblings = pedigree_util.getSiblings(dataset, dataset[7]);
 			//console.log(siblings);
@@ -274,7 +272,8 @@
 			var nieNeph3
 			var nieNeph4
 			
-			// Proband - 1
+			var probIndex
+			
 			// Mother and Father - 2,3
 			// Grandparents - 4,5,6,7
 			// PaternalAU - up to 4
@@ -284,7 +283,12 @@
 			// Siblings - up to 4
 			// Children - up to 4
 			// Nieces and Nephews - up to 4
-			
+
+			// Proband - 1		
+			probIndex = pedigree_util.getProbandIndex(dataset)
+			proband = dataset[probIndex];
+			console.log(proband);
+
 		};
 	</script>
 
