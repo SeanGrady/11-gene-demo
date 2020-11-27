@@ -223,15 +223,15 @@
 			var counter = 0;
 			var person
 			var proband_row
-			for(var i = 0; i < dataset.length; i += 1) {			
-				person = dataset[i];
-				console.log("Row:" + person.name);
-				var proband = Boolean(person.proband);
-				if (proband) {
-					counter+= 1;
-					proband_row = i;
-				};
-			};
+			//for(var i = 0; i < dataset.length; i += 1) {			
+			//	person = dataset[i];
+			//	console.log("Row:" + person.name);
+			//	var proband = Boolean(person.proband);
+			//	if (proband) {
+			//		counter+= 1;
+			//		proband_row = i;
+			//	};
+			//};
 			//console.log(proband_row);
 			//var probindex
 			//probindex = pedigree_util.getProbandIndex(dataset)
@@ -239,9 +239,12 @@
 			//var siblings
 			//siblings = pedigree_util.getSiblings(dataset, dataset[7]);
 			//console.log(siblings);
-			var indiv;
-			indiv = pedigree_util.getIdxByName(dataset,"f21");
-			console.log(indiv);
+			//var indiv;
+			//indiv = pedigree_util.getIdxByName(dataset,"f21");
+			//console.log(indiv);
+			var children
+			children = pedigree_util.getChildren(dataset,"f21","m21");
+			console.log(children);
 			
 		};
 	</script>
