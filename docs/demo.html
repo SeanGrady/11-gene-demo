@@ -249,29 +249,13 @@
 			var JPedigree;
 			
 			// Individuals and Indexes
-			var proband
-			var father
-			var mother
-			var patGF
-			var patGM
-			var matGF
-			var matGM
-			var patAU
-			var matAU
-			var patCO1
-			var patCO2
-			var patCO3
-			var patCO4
-			var matCO1
-			var matCO2
-			var matCO3
-			var matCO4
-			var siblings
-			var children
-			var nieNeph1
-			var nieNeph2
-			var nieNeph3
-			var nieNeph4
+			var proband, var father, var mother;
+			var patGF, var patGM, var matGF, var matGM;
+			var patAU, var matAU;
+			var patCO1, var patCO2, var patCO3, var patCO4;
+			var matCO1, var matCO2, var matCO3, var matCO4;
+			var siblings, var children;
+			var nieceNephew1, var nieceNephew2, var nieceNephew3, var nieceNephew4;
 			
 			var probIndex
 			
@@ -290,14 +274,16 @@
 			proband = dataset[probIndex];
 			console.log(proband);
 			
-			var cancer;
+			var cancer = "";
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-				    console.log('match!', key, proband[key]); 
+					cancer.push(key,proband[key]);
 				};
 			    };
-			};		
+			};
+			console.log('match!', key, proband[key]);
+					
 			// Parents
 
 		};
