@@ -276,7 +276,7 @@
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-					disease = string(\" + key + \" + ":" + \"proband[key] + \")
+					disease = string("\" + key + \" + ":" + \"proband[key] + \"")
 					cancer.push(disease);
 				};
 			    };
