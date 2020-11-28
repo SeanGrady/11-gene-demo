@@ -291,13 +291,13 @@
 			console.log(proband);
 			
 			var cancer;
-			for(key in proband) {
-				if(key.indexOf("cancer") != -1){
-					cancer = proband[key];
-					console.log(key.indexOf("cancer"));
+			for (var key in proband) {
+			    if (proband.hasOwnProperty(key)) {
+				if (/cancer/.test(key)) {
+				    console.log('match!', proband[key]); // do stuff here!
 				};
-			};
-			
+			    };
+			};		
 			// Parents
 
 		};
