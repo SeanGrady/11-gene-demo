@@ -288,10 +288,15 @@
 			// Proband - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
-			var elementIN;
-			elementIN = proband.getElementById("name");
 			console.log(proband);
-			console.log(elementIN);
+			
+			var cancer;
+			for(key in proband) {
+				if(key.indexOf("cancer") != -1){
+					cancer = json[key];
+					console.log(cancer);
+				};
+			};
 			
 			// Parents
 
