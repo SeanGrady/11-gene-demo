@@ -246,7 +246,7 @@
 			
 			// Convert to AI model format
 			// JSON data structure 
-			var JSONPedigree
+			var JSONPedigree;
 			
 			// Individuals and Indexes
 			var proband
@@ -293,7 +293,7 @@
 			var cancer;
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
-				if (/cancer/.test(key)) {
+				if (/diagnosis_age/.test(key)) {
 				    console.log('match!', key); // do stuff here!
 				};
 			    };
