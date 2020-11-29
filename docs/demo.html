@@ -276,7 +276,7 @@
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
 					var disease = key.split('_');
-					disease = capitaliseFirstLetter(disease)
+					disease = capitaliseFirstLetter(disease[0]);
 
 					console.log(disease[0]);
 					//console.log(key + proband[key]);
