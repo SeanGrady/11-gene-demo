@@ -280,16 +280,14 @@
 					if (/Colon/.test(cancer)) {
 						cancer = "Colorectal";
 					};
-					var age = proband[key];
 					var cancerDx = {
 						"cancerDx":cancer,
-						"AgeDx":age
+						"AgeDx":proband[key]
 					};
-					console.log(cancerDx)
-					allCancers.push(cancerDx);
 				};
 			    };
 			};
+			allCancers.sort(function(a,b){return a[1] - b[1]});
 			console.log(allCancers);
 					
 			// Parents
