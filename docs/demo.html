@@ -204,6 +204,29 @@
 	</script>
 	
 	<script>
+		function getCancers(individual) { // returns all cancers as a JSON array. 
+			var allCancers = [];
+			for (var key in individual) {
+			    if (individual.hasOwnProperty(key)) {
+				if (/diagnosis_age/.test(key)) {
+					var cancer = key.split('_');
+					cancer = cancer[0].charAt(0).toUpperCase() + cancer[0].slice(1)
+					if (/Colon/.test(cancer)) {
+						cancer = "Colorectal";
+					};
+					var cancerDx = {
+						"cancerDx":cancer,
+						"ageDx":individual[key]
+					};
+					allCancers.push(cancerDx);
+				};
+			    };
+			};
+			allCancers.sort(function(a, b){return a.ageDx - b.ageDx});
+			return allCancers;
+		}
+		
+		
 		function calcMut() {
 			
 			// Get the current pedigree dataset
@@ -269,26 +292,8 @@
 			// Proband - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
-			console.log(proband);
 			
-			var allCancers = [];
-			for (var key in proband) {
-			    if (proband.hasOwnProperty(key)) {
-				if (/diagnosis_age/.test(key)) {
-					var cancer = key.split('_');
-					cancer = cancer[0].charAt(0).toUpperCase() + cancer[0].slice(1)
-					if (/Colon/.test(cancer)) {
-						cancer = "Colorectal";
-					};
-					var cancerDx = {
-						"cancerDx":cancer,
-						"ageDx":proband[key]
-					};
-					allCancers.push(cancerDx);
-				};
-			    };
-			};
-			allCancers.sort(function(a, b){return a.ageDx - b.ageDx});
+			var allCancers = getCancers(proband);
 			console.log(allCancers) + console.log(allCancers[1].ageDx);
 					
 			// Parents
