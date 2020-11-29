@@ -220,7 +220,7 @@
 			};
 			
 			var dataset = pedcache.current(opts);
-			console.log(dataset);
+			//console.log(dataset);
 			
 			//for(var i = 0; i < dataset.length; i += 1) {			
 			//	person = dataset[i];
@@ -275,7 +275,7 @@
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-					var disease = /breast/.exec(key);
+					var disease = /_$/.exec(key);
 					console.log(disease);
 					//console.log(key + proband[key]);
 					//var specificCA = {
