@@ -278,7 +278,7 @@
 					var disease = key.split('_');
 					//disease = capitaliseFirstLetter(disease[0]);
 					disease = disease[0].charAt(0).toUpperCase() + disease[0].slice(1)
-					if (disease = "Colon") {
+					if (/Colon/.test(disease)) {
 						disease = "Colorectal";
 					}
 					console.log(disease);
