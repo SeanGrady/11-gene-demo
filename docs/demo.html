@@ -275,7 +275,7 @@
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-					var disease = /_$/.exec(key);
+					var disease = /?=_/.exec(key);
 					console.log(disease);
 					//console.log(key + proband[key]);
 					//var specificCA = {
@@ -286,7 +286,7 @@
 				};
 			    };
 			};
-			console.log(cancer);
+			//console.log(cancer);
 			var testCA;
 			testCA = cancer[1];
 			//console.log(testCA.ovarian_cancer_diagnosis_age)
