@@ -282,14 +282,14 @@
 					};
 					var cancerDx = {
 						"cancerDx":cancer,
-						"AgeDx":proband[key]
+						"ageDx":proband[key]
 					};
 					allCancers.push(cancerDx);
 				};
 			    };
 			};
 			console.log(allCancers);
-			allCancers.sort(function(a,b){return a[1] - b[1]});
+			allCancers.sort(function(a, b){return a.ageDX - b.ageDx});
 			console.log(allCancers);
 					
 			// Parents
