@@ -272,13 +272,15 @@
 			console.log(proband);
 			
 			var cancer = [];
-			var item = {}
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-					item[key] = key;
-					item(key) = proband[key];
-					cancer.push(item);
+					console.log(proband[key]);
+					//var specificCA = {
+						
+					//item[key] = key;
+					//item(key) = proband[key];
+					//cancer.push(item);
 				};
 			    };
 			};
