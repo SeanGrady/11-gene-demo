@@ -275,7 +275,7 @@
 			for (var key in proband) {
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
-					var patt = /_$/;
+					var patt = /_$/g;
 					var disease = patt.exec(key);
 					console.log(disease);
 					//console.log(key + proband[key]);
