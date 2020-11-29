@@ -19,7 +19,7 @@
 
 	<script type="text/javascript">
 	function capitaliseFirstLetter(string) {
-	    return (string.charAt(0).toUpperCase() + string.slice(1));
+	    return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 	var DEFAULT_DISEASES = [
 		 {'type': 'breast_cancer', 'colour': '#F68F35'},
@@ -276,8 +276,8 @@
 			    if (proband.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
 					var disease = key.split('_');
-					disease = capitaliseFirstLetter(disease[0]);
-
+					//disease = capitaliseFirstLetter(disease[0]);
+					disease = disease[0].slice(1)
 					console.log(disease[0]);
 					//console.log(key + proband[key]);
 					//var specificCA = {
