@@ -269,7 +269,21 @@
 		
 		function calcMut() {
 			
-			// Get the current pedigree dataset
+			// Declare Individual Variables and Indexes
+			var proband, father, mother;
+			var patGF, patGM, matGF, matGM;
+			var patAU, matAU;
+			var patCO1, patCO2, patCO3, patCO4;
+			var matCO1, matCO2, matCO3, matCO4;
+			var siblings, children;
+			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
+			var probIndex
+
+			// Set up the JSON pedigree data structure
+			var JSONPedigree = [];
+			JSONPedigree = initPedigree(JSONPedigree);
+			
+			// Get the current pedigree dataset from jsPedigree
 			var opts = {
 				'targetDiv': 'pedigrees',
 				'btn_target': 'demo_history',
@@ -281,7 +295,6 @@
 				'diseases': $.extend(true, [], DEFAULT_DISEASES),
 				'DEBUG': (pedigree_util.urlParam('debug') === null ? false : true)
 			};
-			
 			var dataset = pedcache.current(opts);
 			
 			//for(var i = 0; i < dataset.length; i += 1) {			
@@ -304,19 +317,7 @@
 			//console.log(children);
 			
 			// Convert to AI model format
-			// JSON data structure 
-			var JSONPedigree =[];
 			
-			// Individuals and Indexes
-			var proband, father, mother;
-			var patGF, patGM, matGF, matGM;
-			var patAU, matAU;
-			var patCO1, patCO2, patCO3, patCO4;
-			var matCO1, matCO2, matCO3, matCO4;
-			var siblings, children;
-			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
-			
-			var probIndex
 			
 			// Mother and Father - 2,3
 			// Grandparents - 4,5,6,7
