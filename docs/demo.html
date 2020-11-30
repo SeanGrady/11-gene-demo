@@ -244,7 +244,8 @@
 		}
 
 		
-		function getCancers(person) { // returns all of an individual's cancers as a JSON array sorted by ageDx. 
+		// Returns all of an individual's cancers as a JSON array sorted by ageDx. 
+		function getCancers(person) { 
 			var allCancers = [];
 			for (var key in person) {
 			    if (person.hasOwnProperty(key)) {
@@ -279,11 +280,11 @@
 			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
 			var probIndex
 
-			// Set up the JSON pedigree data structure
+			// Set up the JSON pedigree data structure for use by the ML model
 			var JSONPedigree = [];
 			JSONPedigree = initPedigree(JSONPedigree);
 			
-			// Get the current pedigree dataset from jsPedigree
+			// Get the current user input pedigree dataset from jsPedigree as var dataset
 			var opts = {
 				'targetDiv': 'pedigrees',
 				'btn_target': 'demo_history',
@@ -317,26 +318,25 @@
 			//console.log(children);
 			
 			// Convert to AI model format
-			
-			
-			// Mother and Father - 2,3
-			// Grandparents - 4,5,6,7
-			// PaternalAU - up to 4
-			// MaternalAU - up to 4
-			// Paternal Cousins - up to 4
-			// Maternal Cousins - up to 4
-			// Siblings - up to 4
-			// Children - up to 4
-			// Nieces and Nephews - up to 4
+			// Note: Only the proband and 29 other relatives are 
+		
 
-			// Proband - Patient 1		
+			// Copy the proband to JSONPedigree - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
-			
-			var allCancers = getCancers(proband);
-			console.log(allCancers) + console.log(allCancers[1].ageDx/4);
+			var allCancers = getCancers(proband); // get the proband's cancers
+			for 
+			console.log(allCancers);
 					
-			// Parents
+			// Copy the proband's parents to JSONPedigree - Patients 2-3
+			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
+			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
+			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
+			// Copy the proband's paternal cousins to JSONPedigree - Up to 4 per aunt/uncle
+			// Copy the proband's maternal cousins to JSONPedigree - Up to 4 per aunt/uncle
+			// Copy the proband's siblings to JSONPedigree - Up to 4
+			// Copy the proband's children aunts/uncles to JSONPedigree - Up to 4
+			// Copy the proband's nieces/nephews to JSONPedigree - Up to 4 per sibling
 
 		};
 	</script>
