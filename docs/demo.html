@@ -334,7 +334,7 @@
 			var ptID = 1;
 			var gender = proband.sex;
 			eval('JSONPedigree.UP'+ptID+'=1;');
-			eval('JSONPedigree.GN'+ptID+'='+gender+';');
+			eval('JSONPedigree.GN'+ptID+'= gender;');
 			eval('JSONPedigree.FD'+ptID+'=2;');
 			JSONPedigree.MD1 = 3;
 			JSONPedigree.AF1 = allCancers[0].ageDx;
