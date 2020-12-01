@@ -284,7 +284,6 @@
 			// Set up the JSON pedigree data structure for use by the ML model
 			var JSONPedigree = [];
 			JSONPedigree = initPedigree(JSONPedigree);
-			//console.log(JSONPedigree);
 			
 			// Get the current user input pedigree dataset from jsPedigree as var dataset
 			var opts = {
@@ -333,11 +332,11 @@
 				GN1 = proband.sex;
 				FD1 = proband.father;
 				MD1 = proband.mother;
-				AF1 = allCancers[1];
 				AS1 = allCancers[2];
 				CF1 = keysCancers[1];
 				CS1 = keysCancers[2];
 			};
+			JSONPedigree.AF1 = allCancers[1];
 			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
