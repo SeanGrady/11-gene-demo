@@ -269,9 +269,10 @@
 		}
 		
 		
+		// Calculate mutation probability from input pedigree
 		function calcMut() {
 			
-			// Declare Individual Variables and Indexes
+			// Variables and Indexes
 			var proband, father, mother;
 			var patGF, patGM, matGF, matGM;
 			var patAU, matAU;
@@ -285,7 +286,7 @@
 			// Set up the JSON pedigree data structure for use by the ML model
 			JSONPedigree = initPedigree(JSONPedigree);
 			
-			// Get the current user input pedigree dataset from jsPedigree as var dataset
+			// Get the current user input pedigree dataset from PedigreeJS as var dataset
 			var opts = {
 				'targetDiv': 'pedigrees',
 				'btn_target': 'demo_history',
@@ -330,9 +331,11 @@
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
 			allCancers = getCancers(proband); // get the proband's cancers
-			eval('JSONPedigree.UP'+'1'+'=1;');
-			JSONPedigree.GN1 = proband.sex;
-			JSONPedigree.FD1 = 2;
+			var ptID = 1
+			var gender = proband.sex
+			eval('JSONPedigree.UP'+ptID+'=1;');
+			eval('JSONPedigree.GN'+ptID+'='+gender+';');
+			eval('JSONPedigree.FD'+ptID+'=2;');
 			JSONPedigree.MD1 = 3;
 			JSONPedigree.AF1 = allCancers[0].ageDx;
 			JSONPedigree.AS1 = allCancers[1].ageDx;
