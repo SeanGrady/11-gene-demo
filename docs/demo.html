@@ -327,16 +327,15 @@
 			proband = dataset[probIndex];
 			var allCancers = getCancers(proband); // get the proband's cancers			With (JSONPedigree) {
 			var keysCancers = Object.keys(allCancers); // and key valuies
-			with (JSONPedigree) {
-				UP1 = 1;
-				GN1 = proband.sex;
-				FD1 = proband.father;
-				MD1 = proband.mother;
-				AS1 = allCancers[2];
-				CF1 = keysCancers[1];
-				CS1 = keysCancers[2];
-			};
+			JSONPedigree.UP1 = 1;
+			JSONPedigree.GN1 = proband.sex;
+			JSONPedigree.FD1 = proband.father;
+			JSONPedigree.MD1 = proband.mother;
 			JSONPedigree.AF1 = allCancers[1].AgeDx;
+			JSONPedigree.AS1 = allCancers[2];
+			JSONPedigree.CF1 = keysCancers[1];
+			JSONPedigree.CS1 = keysCancers[2];
+			console.log(allCancers);
 			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
