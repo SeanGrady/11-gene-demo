@@ -205,7 +205,7 @@
 	
 	<script>
 		
-		// Initialize JSON data structure
+		// Initialize JSON pedigree data structure
 		function initPedigree(JSONPedigree) {
 			JSONPedigree = [{"PatAU":"","MatAU":"","PatCo1":"","PatCo2":"","PatCo3":"","PatCo4":"",	
 				"MatCo1":"","MatCo2":"","MatCo3":"","MatCo4":"","Siblings":"","Children":"",
@@ -279,10 +279,10 @@
 			var matCO1, matCO2, matCO3, matCO4;
 			var siblings, children;
 			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
-			var probIndex
+			var probIndex, allCancers;
+			var JSONPedigree = [];
 
 			// Set up the JSON pedigree data structure for use by the ML model
-			var JSONPedigree = [];
 			JSONPedigree = initPedigree(JSONPedigree);
 			
 			// Get the current user input pedigree dataset from jsPedigree as var dataset
@@ -317,20 +317,23 @@
 			//var children
 			//children = pedigree_util.getChildren(dataset,dataset[8],dataset[4]);
 			//console.log(children);
-			
+
+			//
 			// Convert to AI model format
-			// Note: Only the proband and 29 other relatives are 
-		
+			// Note: Only the first 30 members of the pedigree are used by the model. 
+			//	 Relatives beyond the first 30 are ignored.
+			// Note: Only the first two cancers per pedigreee member are used by the model. 
+			// 	 Cancers beyond the first two per member are ignored.
+			//
 
 			// Copy the proband to JSONPedigree - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
-			var allCancers = getCancers(proband); // get the proband's cancers			With (JSONPedigree) {
-			var keysCancers = Object.keys(allCancers); // and key valuies
+			allCancers = getCancers(proband); // get the proband's cancers
 			JSONPedigree.UP1 = 1;
 			JSONPedigree.GN1 = proband.sex;
-			JSONPedigree.FD1 = proband.father;
-			JSONPedigree.MD1 = proband.mother;
+			JSONPedigree.FD1 = 2;
+			JSONPedigree.MD1 = 3;
 			JSONPedigree.AF1 = allCancers[0].ageDx;
 			JSONPedigree.AS1 = allCancers[1].ageDx;
 			JSONPedigree.CF1 = allCancers[0].cancerDx;
