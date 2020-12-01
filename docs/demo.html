@@ -331,8 +331,8 @@
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
 			allCancers = getCancers(proband); // get the proband's cancers
-			var ptID = 1
-			var gender = proband.sex
+			var ptID = 1;
+			var gender = proband.sex;
 			eval('JSONPedigree.UP'+ptID+'=1;');
 			eval('JSONPedigree.GN'+ptID+'='+gender+';');
 			eval('JSONPedigree.FD'+ptID+'=2;');
