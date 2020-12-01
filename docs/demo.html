@@ -325,8 +325,15 @@
 			probIndex = pedigree_util.getProbandIndex(dataset)
 			proband = dataset[probIndex];
 			var allCancers = getCancers(proband); // get the proband's cancers
-			//for 
-			console.log(allCancers);
+			JSONPedigree.UP1 = 1;
+			JSONPedigree.GN1 = proband.sex;
+			JSONPedigree.FD1 = proband.father;
+			JSONPedigree.MD1 = proband.mother;
+			JSONPedigree.CF1 = allCancers[1].get(key);
+			JSONPedigree.CS1 = allCancers[2].get(key);
+			JSONPedigree.AF1 = allCancers[1];
+			JSONPedigree.AS1 = allCancers[2];
+			console.log(JSONPedigree);
 					
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
