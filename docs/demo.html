@@ -271,7 +271,7 @@
 		
 		
 		// Adds one person to JSON pedigree
-		function addPerson(JSONPedigree, ptID, gender, father, mother) {
+		function addPerson(JSONPedigree, ptID, gender, father, mother, allCancers) {
 			eval('JSONPedigree[0].UP'+ptID+'='+ptID+';');
 			eval('JSONPedigree[0].GN'+ptID+'=gender;');
 			eval('JSONPedigree[0].FD'+ptID+'=father;');
@@ -352,7 +352,7 @@
 			var father = 2;
 			var mother = 3;
 
-			JSONPedigree = addPerson(JSONPedigree, ptID, gender, father, mother);
+			JSONPedigree = addPerson(JSONPedigree, ptID, gender, father, mother, allCancers);
 			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
