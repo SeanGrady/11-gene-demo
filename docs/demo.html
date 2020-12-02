@@ -296,7 +296,7 @@
 			var matCO1, matCO2, matCO3, matCO4;
 			var siblings, children;
 			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
-			var probIndex, allCancers;
+			var probIndex, allCancers[];
 
 
 			var JSONPedigree = [];
@@ -349,13 +349,14 @@
 			proband = dataset[probIndex];
 			allCancers = getCancers(proband, allCancers); // get the proband's cancers
 			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
+			console.log(allCancers);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
-			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
-			father = dataset[father];
-			allCancers = getCancers(father, allCancers);
-			JSONPedigree = addPerson(JSONPedigree, 2, father.sex, 4, 5, allCancers);
-			console.log(JSONPedigree);
+			//father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
+			//father = dataset[father];
+			//allCancers = getCancers(father, allCancers);
+			//JSONPedigree = addPerson(JSONPedigree, 2, father.sex, 4, 5, allCancers);
+			//console.log(JSONPedigree);
 			
 			//mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
 			//mother = dataset[mother];
