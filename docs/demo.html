@@ -349,11 +349,10 @@
 			proband = dataset[probIndex];
 			allCancers = getCancers(proband); // get the proband's cancers
 			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
-			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			mother = pedigree_util.getIdxByName(dataset,proband.mother);
-			console.log(mother)
+			console.log(mother, mother.name);
 			
 			
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
