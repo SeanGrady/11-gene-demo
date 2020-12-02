@@ -352,6 +352,7 @@
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			mother = pedigree_util.getIdxByName(dataset,proband.mother);
+			mother = dataset[mother];
 			console.log(mother, mother.name);
 			
 			
