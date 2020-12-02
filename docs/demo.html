@@ -338,22 +338,21 @@
 			var mother = 3;
 			var JSONTest = [];
 
-			JSONTest.push({"UP1":"1","GN1":"F","FD1":"2"});
-			JSONTest[0].FD1 = "9";
-			console.log(JSONTest);
+			//JSONTest.push({"UP1":"1","GN1":"F","FD1":"2"});
+			//JSONTest[0].FD1 = "9";
+			//console.log(JSONTest);
 
-			//eval('JSONPedigree.UP'+ptID+'=1;');
+			//eval('JSONPedigree[0].UP'+ptID+'=1;');
 			//eval('JSONPedigree.GN'+ptID+'=gender;');
 			//eval('JSONPedigree.FD'+ptID+'=father;');
 			//eval('JSONPedigree.MD'+ptID+'=mother;');
-			//eval('JSONPedigree.AF'+ptID+'=allCancers[0].ageDx;');
+			eval('JSONPedigree[0].AF'+ptID+'=allCancers[0].ageDx;');
 			//eval('JSONPedigree.AS'+ptID+'=allCancers[1].ageDx;');
 			//eval('JSONPedigree.CF'+ptID+'=allCancers[0].cancerDx;');
 			//eval('JSONPedigree.CS'+ptID+'=allCancers[1].cancerDx;');
 			//JSONPedigree.AF1 = "test value";
 			//console.log(allCancers);
-			//console.log(JSONPedigree.GN1);
-			//console.log(JSONPedigree);
+			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
