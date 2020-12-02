@@ -297,6 +297,8 @@
 			var siblings, children;
 			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
 			var probIndex, allCancers;
+
+
 			var JSONPedigree = [];
 
 			// Set up the JSON pedigree data structure for use by the ML model
@@ -344,15 +346,11 @@
 			//
 
 			// Copy the proband to JSONPedigree - Patient 1		
-			probIndex = pedigree_util.getProbandIndex(dataset)
+			probIndex = pedigree_util.getProbandIndex(dataset); 
 			proband = dataset[probIndex];
-			allCancers = getCancers(proband); // get the proband's cancers
-			var ptID = 1;
-			var gender = proband.sex;
-			var father = 2;
-			var mother = 3;
 
-			JSONPedigree = addPerson(JSONPedigree, ptID, gender, father, mother, allCancers);
+			allCancers = getCancers(proband); // get the proband's cancers
+			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
 			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
