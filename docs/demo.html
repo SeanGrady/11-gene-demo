@@ -241,7 +241,7 @@
 				"UP29":"","GN29":"","FD29":"","MD29":"","CF29":"","CS29":"","AF29":"","AS29":"",
 				"UP30":"","GN30":"","FD30":"","MD30":"","CF30":"","CS30":"","AF30":"","AS30":""
 			}];
-			JSON.stringify(JSONPedigree);
+			//JSON.stringify(JSONPedigree);
 			return JSONPedigree;
 		}
 
@@ -331,7 +331,6 @@
 			//siblings = pedigree_util.getSiblings(dataset, dataset[7]);
 			//console.log(siblings);
 			//var indiv;
-			//indiv = pedigree_util.getIdxByName(dataset,"f21");
 			//console.log(indiv);
 			//var children
 			//children = pedigree_util.getChildren(dataset,dataset[8],dataset[4]);
@@ -353,6 +352,10 @@
 			console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
+			mother = pedigree_util.getIdxByName(dataset,proband.mother);
+			console.log(mother)
+			
+			
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
