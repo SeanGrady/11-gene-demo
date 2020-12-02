@@ -336,11 +336,9 @@
 			var gender = proband.sex;
 			var father = 2;
 			var mother = 3;
-			var JSONTest = {[
-					"UP1":"","GN1":"","FD1":"","MD1":"","CF1":"","CS1":"","AF1":"","AS1":""
-				       }];
+			var JSONTest = {["UP1":"","GN1":"","FD1":"","MD1":"","CF1":"","CS1":"","AF1":"","AS1":""}];
 
-						eval('JSONPedigree.UP'+ptID+'=1;');
+			eval('JSONTest.UP'+ptID+'=1;');
 			eval('JSONTest.GN'+ptID+'=gender;');
 			eval('JSONTest.FD'+ptID+'=father;');
 			eval('JSONTest.MD'+ptID+'=mother;');
