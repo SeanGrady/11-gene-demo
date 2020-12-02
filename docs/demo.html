@@ -351,9 +351,16 @@
 			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
-			mother = pedigree_util.getIdxByName(dataset,proband.mother);
+			father = pedigree_util.getIdxByName(dataset,proband.father); // poroband's father
+			father = dataset[father];
+			allCancers = getCancers(father);
+			JSONPedigree = addPerson (JSONPedigree, 2, "M", 4, 5, allCancers);
+			
+			mother = pedigree_util.getIdxByName(dataset,proband.mother); // poroband's mother
 			mother = dataset[mother];
-			console.log(mother, mother.name);
+			allCancers = getCancers(mother);
+			JSONPedigree = addPerson (JSONPedigree, 3, "F", 6, 7, allCancers);
+			console.log(JSONPedigree);
 			
 			
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
