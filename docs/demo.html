@@ -353,7 +353,7 @@
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
 			father = dataset[father];
-			allCancers = getCancers(father);
+			allCancers = getCancers(father, allCancers);
 			JSONPedigree = addPerson (JSONPedigree, 2, "M", 4, 5, allCancers);
 			console.log(JSONPedigree);
 			
