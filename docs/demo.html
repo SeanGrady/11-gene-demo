@@ -338,16 +338,7 @@
 			var mother = 3;
 			var JSONTest = [{"UP1":"","GN1":"","FD1":"","MD1":"","CF1":"","CS1":"","AF1":"","AS1":""}];
 
-			eval('JSONTest.UP'+ptID+'=1;');
-			eval('JSONTest.GN'+ptID+'=gender;');
-			eval('JSONTest.FD'+ptID+'=father;');
-			eval('JSONTest.MD'+ptID+'=mother;');
-			eval('JSONTest.AF'+ptID+'=allCancers[0].ageDx;');
-			eval('JSONTest.AS'+ptID+'=allCancers[1].ageDx;');
-			eval('JSONTest.CF'+ptID+'=allCancers[0].cancerDx;');
-			eval('JSONTest.CS'+ptID+'=allCancers[1].cancerDx;');
-			JSONTest.AF1 = "test value";
-			//console.log(allCancers);
+			JSONTest.push({"UP1":"1","GN1":"F","FD1":"2"}];
 			console.log(JSONTest.GN1);
 			console.log(JSONTest);
 
