@@ -336,18 +336,35 @@
 			var gender = proband.sex;
 			var father = 2;
 			var mother = 3;
-			eval('JSONPedigree.UP'+ptID+'=1;');
-			eval('JSONPedigree.GN'+ptID+'=gender;');
-			eval('JSONPedigree.FD'+ptID+'=father;');
-			eval('JSONPedigree.MD'+ptID+'=mother;');
-			eval('JSONPedigree.AF'+ptID+'=allCancers[0].ageDx;');
-			eval('JSONPedigree.AS'+ptID+'=allCancers[1].ageDx;');
-			eval('JSONPedigree.CF'+ptID+'=allCancers[0].cancerDx;');
-			eval('JSONPedigree.CS'+ptID+'=allCancers[1].cancerDx;');
-			JSONPedigree.AF1 = "test value";
-			console.log(allCancers);
-			console.log(JSONPedigree.GN1);
-			console.log(JSONPedigree);
+			var JSONTest = {[
+					"UP1":"","GN1":"","FD1":"","MD1":"","CF1":"","CS1":"","AF1":"","AS1":""
+				       }];
+
+						eval('JSONPedigree.UP'+ptID+'=1;');
+			eval('JSONTest.GN'+ptID+'=gender;');
+			eval('JSONTest.FD'+ptID+'=father;');
+			eval('JSONTest.MD'+ptID+'=mother;');
+			eval('JSONTest.AF'+ptID+'=allCancers[0].ageDx;');
+			eval('JSONTest.AS'+ptID+'=allCancers[1].ageDx;');
+			eval('JSONTest.CF'+ptID+'=allCancers[0].cancerDx;');
+			eval('JSONTest.CS'+ptID+'=allCancers[1].cancerDx;');
+			JSONTest.AF1 = "test value";
+			//console.log(allCancers);
+			console.log(JSONTest.GN1);
+			console.log(JSONTest);
+
+			//eval('JSONPedigree.UP'+ptID+'=1;');
+			//eval('JSONPedigree.GN'+ptID+'=gender;');
+			//eval('JSONPedigree.FD'+ptID+'=father;');
+			//eval('JSONPedigree.MD'+ptID+'=mother;');
+			//eval('JSONPedigree.AF'+ptID+'=allCancers[0].ageDx;');
+			//eval('JSONPedigree.AS'+ptID+'=allCancers[1].ageDx;');
+			//eval('JSONPedigree.CF'+ptID+'=allCancers[0].cancerDx;');
+			//eval('JSONPedigree.CS'+ptID+'=allCancers[1].cancerDx;');
+			//JSONPedigree.AF1 = "test value";
+			//console.log(allCancers);
+			//console.log(JSONPedigree.GN1);
+			//console.log(JSONPedigree);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
