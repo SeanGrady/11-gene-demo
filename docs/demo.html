@@ -247,8 +247,8 @@
 
 		
 		// Returns all of an individual's cancers as a JSON array sorted by ageDx. 
-		function getCancers(person) { 
-			var allCancers = [];
+		function getCancers(person, allCancers) { 
+			allCancers = [];
 			for (var key in person) {
 			    if (person.hasOwnProperty(key)) {
 				if (/diagnosis_age/.test(key)) {
@@ -347,14 +347,14 @@
 			// Copy the proband to JSONPedigree - Patient 1		
 			probIndex = pedigree_util.getProbandIndex(dataset); 
 			proband = dataset[probIndex];
-			allCancers = getCancers(proband); // get the proband's cancers
+			allCancers = getCancers(proband, allCancers); // get the proband's cancers
 			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
 			father = dataset[father];
+			allCancers = getCancers(father);
 			console.log(father, allCancers);
-			//allCancers = getCancers(father);
 			//JSONPedigree = addPerson (JSONPedigree, 2, "M", 4, 5, allCancers);
 			
 			//mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
