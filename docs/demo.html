@@ -298,7 +298,7 @@
 		function calcMut() {
 			
 			// Variables and Indexes
-			var proband, father, mother;
+			var proband, father, mother, pgFather, mgFather, mgMother, pgMother;
 			var patGF, patGM, matGF, matGM;
 			var patAU, matAU;
 			var patCO1, patCO2, patCO3, patCO4;
@@ -356,8 +356,20 @@
 			JSONPedigree = addPerson(JSONPedigree, 3, "Female", 6, 7, allCancers);
 			console.log(JSONPedigree);
 			
-			
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
+			pgFather = pedigree_util.getIdxByName(dataset,father.father); // proband's paternal grandfather
+			pgFather = dataset[pgFather];
+			allCancers = getCancers(pgFather, allCancers);
+			JSONPedigree = addPerson(JSONPedigree, 4, "Male",,, allCancers);
+
+			pgMother = pedigree_util.getIdxByName(dataset,father.mother); // proband's paternal grandmother
+			mother = dataset[mother];
+			allCancers = getCancers(mother, allCancers);
+			JSONPedigree = addPerson(JSONPedigree, 5, "Female",,, allCancers);
+			console.log(JSONPedigree);
+		
+
+			
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
 			// Copy the proband's siblings to JSONPedigree - Up to 4
