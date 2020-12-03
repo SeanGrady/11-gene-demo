@@ -325,23 +325,8 @@
 			};
 			var dataset = pedcache.current(opts);
 			
-			//for(var i = 0; i < dataset.length; i += 1) {			
-			//	person = dataset[i];
-			//	console.log("Row:" + person.name);
-			//	var proband = Boolean(person.proband);
-			//	if (proband) {
-			//		counter+= 1;
-			//		proband_row = i;
-			//	};
-			//};
-			//var siblings
 			//siblings = pedigree_util.getSiblings(dataset, dataset[7]);
-			//console.log(siblings);
-			//var indiv;
-			//console.log(indiv);
-			//var children
 			//children = pedigree_util.getChildren(dataset,dataset[8],dataset[4]);
-			//console.log(children);
 
 			//
 			// Convert to AI model format
@@ -361,14 +346,13 @@
 			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
 			father = dataset[father];
 			allCancers = getCancers(father, allCancers);
-			JSONPedigree = addPerson(JSONPedigree, 2, father.sex, 4, 5, allCancers);
-			console.log(JSONPedigree);
+			JSONPedigree = addPerson(JSONPedigree, 2, "Male", 4, 5, allCancers);
 			
-			//mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
-			//mother = dataset[mother];
-			//allCancers = getCancers(mother);
-			//JSONPedigree = addPerson (JSONPedigree, 3, "F", 6, 7, allCancers);
-			//console.log(JSONPedigree);
+			mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
+			mother = dataset[mother];
+			allCancers = getCancers(mother, allCancers);
+			JSONPedigree = addPerson(JSONPedigree, 3, "Female", 6, 7, allCancers);
+			console.log(JSONPedigree);
 			
 			
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
