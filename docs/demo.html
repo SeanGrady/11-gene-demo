@@ -354,9 +354,8 @@
 			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
 			father = dataset[father];
 			allCancers = getCancers(father, allCancers);
-			console.log(allCancers);
-			//JSONPedigree = addPerson(JSONPedigree, 2, father.sex, 4, 5, allCancers);
-			//console.log(JSONPedigree);
+			JSONPedigree = addPerson(JSONPedigree, 2, father.sex, 4, 5, allCancers);
+			console.log(JSONPedigree);
 			
 			//mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
 			//mother = dataset[mother];
