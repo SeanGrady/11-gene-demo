@@ -380,7 +380,7 @@
 			
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			patAU = pedigree_util.getSiblings(dataset, father); // proband's father's siblings
-			for (let i = 0, i < siblings.length; i++) {
+			for (i = 0, i < siblings.length; i++) {
 				ptCount = ptCount + 1;
 				person = patAU[i]
 				allcancers = getCancers(person, allCancers);
