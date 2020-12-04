@@ -308,7 +308,6 @@
 			var probIndex, person, allCancers = [];
 			var ptCount;
 
-
 			var JSONPedigree = [];
 
 			// Set up the JSON pedigree data structure for use by the ML model
@@ -380,10 +379,10 @@
 			
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			patAU = pedigree_util.getSiblings(dataset, father); // proband's father's siblings
-			var i;
-			for(i = 0, i < patAU.length; i++) {
+			var j;
+			for(j = 0, j < patAU.length; j++) {
 				ptCount = ptCount + 1;
-				person = patAU[i];
+				person = patAU[j];
 				allcancers = getCancers(person, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, person.gender, 4, 5, allCancers);
 			}
