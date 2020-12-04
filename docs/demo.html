@@ -305,7 +305,7 @@
 			var matCO1, matCO2, matCO3, matCO4;
 			var siblings, children;
 			var nieceNephew1, nieceNephew2, nieceNephew3, nieceNephew4;
-			var probIndex, person, allCancers = [];
+			var probIndex, member, allCancers = [];
 			var ptCount;
 
 			var JSONPedigree = [];
@@ -382,10 +382,10 @@
 			console.log(patAU);
 			for(let i = 0; i < patAU.length; i++) {
 				ptCount = ptCount + 1;
-				person = patAU[i];
-				allcancers = getCancers(person, allCancers);
-				console.log(ptCount, person, allCancers);
-				JSONPedigree = addPerson(JSONPedigree, ptCount, person.gender, 4, 5, allCancers);
+				member = patAU[i];
+				allcancers = getCancers(member, allCancers);
+				console.log(ptCount, member, allCancers);
+				JSONPedigree = addPerson(JSONPedigree, ptCount, member.gender, 4, 5, allCancers);
 			};
 		
 			console.log(JSONPedigree);
