@@ -379,10 +379,10 @@
 			ptCount = 7;
 			
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
-			father = pedigree_util.getIdxByName(dataset,proband.father); 
+			father = pedigree_util.getIdxByName(dataset,proband.father);
+			console.log(father);
 			siblings = pedigree_util.getSiblings(dataset, father);
 
-			console.log(pedigree_util.getIdxByName(dataset,proband.father));
 			console.log(siblings);
 		
 
