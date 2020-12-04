@@ -382,8 +382,8 @@
 			for(let i = 0; i < patAU.length; i++) {
 				ptCount = ptCount + 1;
 				person = patAU[i];
-				console.log(person);
 				allcancers = getCancers(person, allCancers);
+				console.log(allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, person.gender, 4, 5, allCancers);
 			};
 		
