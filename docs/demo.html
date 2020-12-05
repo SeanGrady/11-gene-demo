@@ -379,6 +379,7 @@
 			
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			patAU = pedigree_util.getSiblings(dataset, father); // proband's father's siblings
+			JSONPedigree[0].patAU = patAU.length;
 			for(let i = 0; i < patAU.length; i++) {
 				ptCount = ptCount + 1;
 				member = patAU[i];
@@ -388,12 +389,13 @@
 				
 			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
 			matAU = pedigree_util.getSiblings(dataset, mother); // proband's mother's siblings
+			JSONPedigree[0].matAU = matAU.length;
 			for(let i = 0; i < matAU.length; i++) {
 				ptCount = ptCount + 1;
 				member = matAU[i];
 				allCancers = getCancers(member, allCancers);
 				console.log(ptCount, member, allCancers);
-				JSONPedigree = addPerson(JSONPedigree, ptCount, member.gender, 4, 5, allCancers);
+				JSONPedigree = addPerson(JSONPedigree, ptCount, member.gender, 6, 7, allCancers);
 			};
 			
 			console.log(JSONPedigree);
