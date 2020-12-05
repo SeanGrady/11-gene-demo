@@ -409,11 +409,11 @@
 			};
 			
 			// Copy the proband's children to JSONPedigree - Up to 4
-			children = pedigree_util.getSiblings(dataset, proband); // proband's siblings
-			JSONPedigree[0].Siblings = siblings.length;
-			for(let i = 0; i < siblings.length; i++) {
+			children = pedigree_util.getChildren(dataset, proband); // proband's children
+			JSONPedigree[0].Children = children.length;
+			for(let i = 0; i < children.length; i++) {
 				ptCount = ptCount + 1;
-				member = siblings[i];
+				member = children[i];
 				allCancers = getCancers(member, allCancers);
 				console.log(ptCount, member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.gender, 2, 3, allCancers);
