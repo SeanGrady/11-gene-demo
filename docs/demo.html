@@ -419,7 +419,7 @@
 			
 			// Copy the proband's paternal cousins to JSONPedigree - Up to 4 per aunt/uncle
 			for(let i = 0; i < patAU.length; i++) {
-				eval('patCO'+i+'=pedigree_util.getChildren(dataset, patAU[i])););
+				eval('patCO'+i+'=pedigree_util.getChildren(dataset, patAU[i]));');
 				console.log(patCO1)
 				//eval('JSONPedigree[0].PatCO'+i+'= children.length;'JSONPedigree[0].GN'+ptID+'=gender;'
 				//ptCount = ptCount + 1;
