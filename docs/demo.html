@@ -423,7 +423,7 @@
 				eval('JSONPedigree[0].PatCo'+(i+1)+'=patCo.length;');
 				for (let j = 0; j < patCo.length; j++) {
 					ptCount = ptCount + 1;
-					member = patCo[i];
+					member = patCo[j];
 					allCancers = getCancers(member, allCancers);
 					console.log(ptCount, member, allCancers);
 					JSONPedigree = addPerson(JSONPedigree, ptCount, member.gender, patCo[i].father, patCo[i].mother, allCancers);
