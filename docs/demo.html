@@ -384,7 +384,9 @@
 				member = patAU[i];
 				allCancers = getCancers(member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, 4, 5, allCancers);
-				patAU[i].UPIN = JSON.stringify(ptCount);
+				patAU[i].UPIN = ptCount;
+				var q;
+				q = patAU[i].UPIN;
 			};
 				
 			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
