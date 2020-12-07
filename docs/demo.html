@@ -426,7 +426,7 @@
 			for (let i = 0; i < patAU.length; i++) {
 				patCo = pedigree_util.getChildren(dataset, patAU[i]); // probands paternal cousins
 				eval('JSONPedigree[0].PatCo'+(i+1)+'=patCo.length;');
-				var k 
+				var k; 
 				k = i+1;
 				JSONParent = patAU[k].UPIN;
 				for (let j = 0; j < patCo.length; j++) {
