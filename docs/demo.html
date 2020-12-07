@@ -421,11 +421,11 @@
 			};
 			
 			// Copy the proband's paternal cousins to JSONPedigree - Up to 4 per aunt/uncle
-			console.log(patAU.UPIN);
 			for (let i = 0; i < patAU.length; i++) {
 				patCo = pedigree_util.getChildren(dataset, patAU[i]); // probands paternal cousins
 				eval('JSONPedigree[0].PatCo'+(i+1)+'=patCo.length;');
 				eval('JSONParent=patAU['+(i+1)+'].UPIN;');
+				console.log(patAU[i].UPIN);
 				for (let j = 0; j < patCo.length; j++) {
 					ptCount = ptCount + 1;
 					member = patCo[j];
