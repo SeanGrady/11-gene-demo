@@ -435,13 +435,12 @@
 				};
 			};
 
-			
-			console.log(matAU);
 			// Copy the proband's maternal cousins to JSONPedigree - Up to 4 per aunt/uncle
 			for (let i = 0; i < matAU.length; i++) {
 				matCo = pedigree_util.getChildren(dataset, matAU[i]); // probands maternal cousins
 				eval('JSONPedigree[0].MatCo'+(i+1)+'=matCo.length;');
 				JSONParent = matAU[i].UPIN;
+				console.log(matCo);
 				for (let j = 0; j < matCo.length; j++) {
 					ptCount = ptCount + 1;
 					member = matCo[j];
