@@ -440,7 +440,7 @@
 				matCo = pedigree_util.getChildren(dataset, matAU[i]); // probands maternal cousins
 				eval('JSONPedigree[0].MatCo'+(i+1)+'=matCo.length;');
 				JSONParent = matAU[i].UPIN;
-				console.log(matCo);
+				console.log(matAU[i], matCo);
 				for (let j = 0; j < matCo.length; j++) {
 					ptCount = ptCount + 1;
 					member = matCo[j];
