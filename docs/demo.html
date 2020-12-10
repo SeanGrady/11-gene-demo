@@ -289,7 +289,6 @@
 				eval('JSONPedigree[0].CS'+ptID+'=allCancers[1].cancerDx;');
 				eval('JSONPedigree[0].AS'+ptID+'=allCancers[1].ageDx;');
 			};
-			console.log(ptID);
 			return JSONPedigree;
 		}
 		
@@ -343,40 +342,47 @@
 			proband = dataset[probIndex];
 			allCancers = getCancers(proband, allCancers); // get the proband's cancers
 			JSONPedigree = addPerson(JSONPedigree, 1, proband.sex, 2, 3, allCancers);
+			console.log(1,proband);
 
 			// Copy the proband's parents to JSONPedigree - Patients 2-3
 			father = pedigree_util.getIdxByName(dataset,proband.father); // proband's father
 			father = dataset[father];
 			allCancers = getCancers(father, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 2, "Male", 4, 5, allCancers);
+			console.log(2,father);
 			
 			mother = pedigree_util.getIdxByName(dataset,proband.mother); // proband's mother
 			mother = dataset[mother];
 			allCancers = getCancers(mother, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 3, "Female", 6, 7, allCancers);
-			
+			console.log(3,mother);
+
 			// Copy the proband's grandparents to JSONPedigree - Patients 4-7
 			pgFather = pedigree_util.getIdxByName(dataset,father.father); // proband's paternal grandfather
 			pgFather = dataset[pgFather];
 			allCancers = getCancers(pgFather, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 4, "Male", "", "", allCancers);
+			console.log(4,pgFather);
 
 			pgMother = pedigree_util.getIdxByName(dataset,father.mother); // proband's paternal grandmother
 			pgMother = dataset[pgMother];
 			allCancers = getCancers(pgMother, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 5, "Female", "", "", allCancers);
-			
+			console.log(5,pgMother);
+
 			mgFather = pedigree_util.getIdxByName(dataset,mother.father); // proband's maternal grandfather
 			mgFather = dataset[mgFather];
 			allCancers = getCancers(pgFather, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 6, "Male", "", "", allCancers);
+			console.log(6,mgFather);
 
 			mgMother = pedigree_util.getIdxByName(dataset,mother.mother); // proband's maternal grandmother
 			mgMother = dataset[mgMother];
 			allCancers = getCancers(mgMother, allCancers);
 			JSONPedigree = addPerson(JSONPedigree, 7, "Female", "", "", allCancers);
 			ptCount = 7;
-			
+			console.log(ptCount,mgMother);
+
 			// Copy the proband's paternal aunts/uncles to JSONPedigree - Up to 4
 			patAU = pedigree_util.getSiblings(dataset, father); // proband's father's siblings
 			JSONPedigree[0].PatAU = patAU.length;
@@ -386,8 +392,7 @@
 				allCancers = getCancers(member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, 4, 5, allCancers);
 				patAU[i].UPIN = ptCount;
-				var q;
-				q = patAU[i].UPIN;
+				console.log(ptCount,member);
 			};
 				
 			// Copy the proband's maternal aunts/uncles to JSONPedigree - Up to 4
@@ -399,6 +404,7 @@
 				allCancers = getCancers(member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, 6, 7, allCancers);
 				matAU[i].UPIN = ptCount;
+				console.log(ptCount,member);
 			};
 			
 			// Copy the proband's siblings to JSONPedigree - Up to 4
@@ -410,6 +416,7 @@
 				allCancers = getCancers(member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, 2, 3, allCancers);
 				siblings[i].UPIN = ptCount;
+				console.log(ptCount,member);
 			};
 			
 			// Copy the proband's children to JSONPedigree - Up to 4
@@ -421,6 +428,7 @@
 				allCancers = getCancers(member, allCancers);
 				JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, 1, 1, allCancers);
 				children[i].UPIN = ptCount;
+				console.log(ptCount,member);
 			};
 			
 			// Copy the proband's paternal cousins to JSONPedigree - Up to 4 per aunt/uncle
@@ -433,6 +441,7 @@
 					member = patCo[j];
 					allCancers = getCancers(member, allCancers);
 					JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, JSONParent, JSONParent, allCancers);
+					console.log(ptCount,member);
 				};
 			};
 
@@ -446,6 +455,7 @@
 					member = matCo[j];
 					allCancers = getCancers(member, allCancers);
 					JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, JSONParent, JSONParent, allCancers);
+					console.log(ptCount,member);
 				};
 			};
 
@@ -459,6 +469,7 @@
 					member = nieceNephew[j];
 					allCancers = getCancers(member, allCancers);
 					JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, JSONParent, JSONParent, allCancers);
+					console.log(ptCount,member);
 				};
 			};
 			
