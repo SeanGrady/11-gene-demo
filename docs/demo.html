@@ -310,7 +310,6 @@
 			var JSONPedigree = [];
 
 			// Set up the JSON pedigree data structure for use by the ML model
-			console.log(JSONPedigree);
 			JSONPedigree = initPedigree(JSONPedigree);
 			
 			// Get the current user input pedigree dataset from PedigreeJS as var dataset
@@ -474,9 +473,9 @@
 				};
 			};
 			
-			var testPedigree;
+			var testPedigree, obj;
 			//testPedigree = JSONPedigree;
-			testPedigree = JSON.parse(testPedigree);
+			obj = JSON.parse(testPedigree);
 			console.log(testPedigree);
 
 		};
