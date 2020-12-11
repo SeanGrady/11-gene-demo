@@ -207,11 +207,8 @@
 		
 		// Initialize JSON pedigree data structure
 		function initPedigree(JSONPedigree) {
-			JSONPedigree = [{‘PatAU’:"",’MatAU’:"",’PatCo1’:"",’PatCo2’:"",’PatCo3’:"",’PatCo4’:"",
-				‘MatCo1’:’’,’MatCo2’:’’,’MatCo3’:’’,’MatCo4’:’’,’Siblings’:’’,’Children’:’’,
-				‘ChildSib1’:’’,’ChildSib2’:’’,’ChildSib3’:’’,’ChildSib4’:’’,’Mutation’:’’,	
-				‘UP1’:’’,’GN1’:’’,’FD1’:’’,’MD1’:’’,’CF1’:’’,’CS1’:’’,’AF1’:’’,’AS1’:’’,	
-				‘UP2’:’’,’GN2’:’’,’FD2’:’’,’MD2’:’’,’CF2’:’’,’CS2’:’’,’AF2’:’’,’AS2’:’’,	
+			emptyPedigreeRow = {‘PatAU’:"",’MatAU’:"",’PatCo1’:"",’PatCo2’:"",’PatCo3’:"",’PatCo4’:"",‘MatCo1’:’’,’MatCo2’:’’,’MatCo3’:’’,’MatCo4’:’’,’Siblings’:’’,’Children’:’’,‘ChildSib1’:’’,’ChildSib2’:’’,’ChildSib3’:’’,’ChildSib4’:’’,’Mutation’:’’,‘UP1’:’’,’GN1’:’’,’FD1’:’’,’MD1’:’’,’CF1’:’’,’CS1’:’’,’AF1’:’’,’AS1’:’’,
+					    ‘UP2’:’’,’GN2’:’’,’FD2’:’’,’MD2’:’’,’CF2’:’’,’CS2’:’’,’AF2’:’’,’AS2’:’’,	
 				‘UP3’:’’,’GN3’:’’,’FD3’:’’,’MD3’:’’,’CF3’:’’,’CS3’:’’,’AF3’:’’,’AS3’:’’,	
 				‘UP4’:’’,’GN4’:’’,’FD4’:’’,’MD4’:’’,’CF4’:’’,’CS4’:’’,’AF4’:’’,’AS4’:’’,
 				‘UP5’:’’,’GN5’:’’,’FD5’:’’,’MD5’:’’,’CF5’:’’,’CS5’:’’,’AF5’:’’,’AS5’:’’,
@@ -241,7 +238,7 @@
 				‘UP29’:’’,’GN29’:’’,’FD29’:’’,’MD29’:’’,’CF29’:’’,’CS29’:’’,’AF29’:’’,’AS29’:’’,
 				‘UP30’:’’,’GN30’:’’,’FD30’:’’,’MD30’:’’,’CF30’:’’,’CS30’:’’,’AF30’:’’,’AS30’:’’
 
-			}];
+			};
 			return JSONPedigree;
 		}
 
