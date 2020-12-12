@@ -243,7 +243,7 @@
 			}];
 			var testPedigree;
 			testPedigree = [{PatAU:''},{MatAU:''},{PatCo1:''},{PatCo2:''},{PatCo3:''},{PatCo4:''}];
-			console.log(testPedigree[Object.keys(testPedigree)]);
+			testPedigree[2]['PatCo1'] = 2;
 			console.log(testPedigree);
 			return JSONPedigree;
 		}
@@ -299,7 +299,7 @@
 		
 		// Calculate mutation probability from input pedigree
 		function calcMut() {
-			
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     	
 			// Variables and Indexes
 			var proband, father, mother, pgFather, mgFather, mgMother, pgMother;
 			var patGF, patGM, matGF, matGM;
