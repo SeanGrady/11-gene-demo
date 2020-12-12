@@ -278,7 +278,7 @@
 			} else {
  				gender = "Female";
 			};
-			JSONPedigree[0][GN+ptID+] = gender;
+			JSONPedigree[0][GN+ptID] = gender;
 			eval('JSONPedigree[0].FD'+ptID+'=father;');
 			eval('JSONPedigree[0].MD'+ptID+'=mother;');
 			if (allCancers.length > 0) {
