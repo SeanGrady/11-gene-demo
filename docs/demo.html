@@ -272,22 +272,21 @@
 		// Adds one person to JSON pedigree
 		function addPerson(JSONPedigree, ptID, gender, father, mother, allCancers) {
 			JSONPedigree[0]['UP'+ptID] = ptID;
-			//eval('JSONPedigree[0].UP'+ptID+'='+ptID+';');
 			if (/M/.test(gender)) {
 				gender = "Male";
 			} else {
  				gender = "Female";
 			};
 			JSONPedigree[0]['GN'+ptID] = gender;
-			eval('JSONPedigree[0].FD'+ptID+'=father;');
-			eval('JSONPedigree[0].MD'+ptID+'=mother;');
+			JSONPedigree[0]['FD'+ptID] = father;
+			JSONPedigree[0]['MD'+ptID] = mother;
 			if (allCancers.length > 0) {
-				eval('JSONPedigree[0].CF'+ptID+'=allCancers[0].cancerDx;');
-				eval('JSONPedigree[0].AF'+ptID+'=JSON.parse(allCancers[0].ageDx);');
+				JSONPedigree[0]['CF'+ptID] = allCancers[0].cancerDx;
+				JSONPedigree[0]['AF'+ptID] = JSON.parse(allCancers[0].ageDx);
 			};
 			if (allCancers.length > 1) {
-				eval('JSONPedigree[0].CS'+ptID+'=allCancers[1].cancerDx;');
-				eval('JSONPedigree[0].AS'+ptID+'=JSON.parse(allCancers[1].ageDx);');
+				JSONPedigree[0]['CS'+ptID] = allCancers[1].cancerDx;
+				JSONPedigree[0]['AS'+ptID] = JSON.parse(allCancers[1].ageDx);
 			};
 			return JSONPedigree;
 		}
