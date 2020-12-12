@@ -419,7 +419,7 @@
 			// Copy the proband's paternal cousins to JSONPedigree - Up to 4 per aunt/uncle
 			for (let i = 0; i < patAU.length; i++) {
 				patCo = pedigree_util.getAllChildren(dataset, patAU[i]); // proband's paternal cousins
-				eval('JSONPedigree[0].PatCo'+(i+1)+'=patCo.length;');
+				JSONPedigree[0]['PatCo'+(i+1)] = patCo.length;
 				JSONParent = patAU[i].UPIN;
 				for (let j = 0; j < patCo.length; j++) {
 					ptCount = ptCount + 1;
@@ -432,7 +432,7 @@
 			// Copy the proband's maternal cousins to JSONPedigree - Up to 4 per aunt/uncle
 			for (let i = 0; i < matAU.length; i++) {
 				matCo = pedigree_util.getAllChildren(dataset, matAU[i]); // proband's maternal cousins
-				eval('JSONPedigree[0].MatCo'+(i+1)+'=matCo.length;');
+				JSONPedigree[0]['MatCo'+(i+1)] = matCo.length;
 				JSONParent = matAU[i].UPIN;
 				for (let j = 0; j < matCo.length; j++) {
 					ptCount = ptCount + 1;
@@ -445,7 +445,7 @@
 			// Copy the proband's nieces/nephews to JSONPedigree - Up to 4 per sibling
 			for (let i = 0; i < siblings.length; i++) {
 				nieceNephew = pedigree_util.getAllChildren(dataset, siblings[i]); // proband's nieces and nephews
-				eval('JSONPedigree[0].ChildSib'+(i+1)+'=nieceNephew.length;');
+				JSONPedigree[0]['ChildSib'+(i+1)] = nieceNephew.length;
 				JSONParent = siblings[i].UPIN;
 				for (let j = 0; j < nieceNephew.length; j++) {
 					ptCount = ptCount + 1;
