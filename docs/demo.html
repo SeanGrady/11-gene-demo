@@ -271,7 +271,6 @@
 		
 		// Adds one person to JSON pedigree
 		function addPerson(JSONPedigree, ptID, gender, father, mother, allCancers) {
-			//var person_key = 'UP'+ptID;
 			JSONPedigree[0]['UP'+ptID] = ptID;
 			//eval('JSONPedigree[0].UP'+ptID+'='+ptID+';');
 			if (/M/.test(gender)) {
@@ -279,7 +278,7 @@
 			} else {
  				gender = "Female";
 			};
-			eval('JSONPedigree[0].GN'+ptID+'=gender;');
+			JSONPedigree[0][GN+ptID+] = gender;
 			eval('JSONPedigree[0].FD'+ptID+'=father;');
 			eval('JSONPedigree[0].MD'+ptID+'=mother;');
 			if (allCancers.length > 0) {
