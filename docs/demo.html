@@ -280,6 +280,7 @@
 			testPedigree[3]['PatCo2'] = 'Test';
 			var test2Pedigree;
 			test2Pedigree = JSON.stringify(testPedigree);
+			testPedigree = JSON.parse(test2Pedigree);
 			console.log(testPedigree);
 			return JSONPedigree;
 		}
