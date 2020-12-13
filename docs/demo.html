@@ -331,6 +331,16 @@
 			};
 			return JSONPedigree;
 		}
+
+
+        // Transforms JSONPedigree into the google's special snowflake format
+        function makeGooglePedigree(JSONPedigree) {
+            var snowflake_pedigree = []
+            for (var key in JSONPedigree) {
+                snowflake_pedigree.push({key: JSONPedigree[key]});
+            };
+            return snowflake_pedigree
+        };
 		
 		
 		
@@ -495,7 +505,10 @@
 					JSONPedigree = addPerson(JSONPedigree, ptCount, member.sex, JSONParent, JSONParent, allCancers);
 				};
 			};
+
+            var googlePedigree = makeGooglePedigree(JSONPedigree);
 			console.log(JSONPedigree);
+            console.log(googlePedigree);
 		};
 	</script>
 
