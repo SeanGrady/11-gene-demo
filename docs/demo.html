@@ -336,8 +336,9 @@
         // Transforms JSONPedigree into the google's special snowflake format
         function makeGooglePedigree(JSONPedigree) {
             var snowflake_pedigree = []
-            for (var key in JSONPedigree) {
-                snowflake_pedigree.push({key: JSONPedigree[key]});
+            for (const [key, value] in JSONPedigree.entries()) {
+                snowflake_pedigree.push({key: value});
+                console.log(key, value);
             };
             return snowflake_pedigree
         };
